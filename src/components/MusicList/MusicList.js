@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './MusicList.css'; // CSS dosyanızı içe aktarın
+import './MusicList.css';
 
 const MusicList = () => {
   const [musicList, setMusicList] = useState([]);
@@ -14,23 +14,29 @@ const MusicList = () => {
   }, []);
 
   const handlePlay = (fileUrl, musicId) => {
-    if (playing) {
-      playing.pause(); // Önceki müziği durdur
+    if (playing && currentlyPlayingId === musicId) {
+      playing.pause();
+      setPlaying(null);
+      setCurrentlyPlayingId(null);
+    } else {
+      if (playing) {
+        playing.pause();
+      }
+      
+      const audio = new Audio(fileUrl);
+      audio.play().catch(error => console.error("Error playing audio:", error));
+      setPlaying(audio);
+      setCurrentlyPlayingId(musicId);
+    
+      // Çalma geçmişini kaydetme
+      axios.post('http://localhost:8000/api/play-history/', { music: musicId })
+        .then(response => {
+          console.log("Play history saved:", response.data);
+        })
+        .catch(error => console.error("Error saving play history:", error));
     }
-  
-    const audio = new Audio(fileUrl);
-    audio.play().catch(error => console.error("Error playing audio:", error));
-    setPlaying(audio);
-    setCurrentlyPlayingId(musicId);
-  
-    // Çalma geçmişini kaydetme
-    axios.post('http://localhost:8000/api/play-history/', { music: musicId })
-      .then(response => {
-        console.log("Play history saved:", response.data);
-      })
-      .catch(error => console.error("Error saving play history:", error));
   };
-  
+
   return (
     <div className="music-list-container">
       <h1 className="music-list-title">🎶 Müzik Listesi 🎶</h1>
@@ -48,7 +54,7 @@ const MusicList = () => {
               className="play-button" 
               onClick={() => handlePlay(music.file, music.id)}
             >
-              {currentlyPlayingId === music.id ? 'Çalıyor...' : 'Oynat'}
+              {currentlyPlayingId === music.id && playing ? 'Durdur' : 'Oynat'}
             </button>
           </div>
         ))}

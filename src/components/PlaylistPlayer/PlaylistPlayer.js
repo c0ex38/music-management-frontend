@@ -121,8 +121,11 @@ const PlaylistPlayer = () => {
   return (
     <div className="player-container">
       <h2>Çalma Listesi</h2>
-      <p className="welcome-message">Hoş geldin, <strong>{name}</strong>! Mağaza: <strong>{storeName}</strong></p>
-
+      <p className="welcome-message">
+        🎶 Hoş geldin, <span className="user-name">{name}</span>! 🎶 
+        <br />
+        <span className="store-info"><strong>{storeName}</strong></span>
+      </p>
       {playlist.length > 0 ? (
         <div>
           <div className="track-info">
@@ -139,11 +142,10 @@ const PlaylistPlayer = () => {
               {isShuffle ? "Shuffle Kapat" : "Shuffle Aç"}
             </button>
           </div>
-
-          <p className="current-track">
+          <p className="next-track">
             {isShuffle
-              ? `Karışık çalma aktif: ${shuffledPlaylist[currentTrack].title}`
-              : `Çalma sırası: ${playlist[currentTrack].title}`}
+              ? `Sonraki: ${shuffledPlaylist[(currentTrack + 1) % shuffledPlaylist.length].title}`
+              : `Sonraki: ${playlist[(currentTrack + 1) % playlist.length].title}`}
           </p>
         </div>
       ) : (

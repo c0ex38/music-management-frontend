@@ -3,61 +3,75 @@
 .upload-container {
     max-width: 500px;
     margin: 0 auto;
-    padding: 30px;
-    /* İç boşluk artırıldı */
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 35px;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
     border-radius: 15px;
-    /* Köşeleri yuvarlat */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* Daha belirgin gölge */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.upload-container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .upload-title {
     font-size: 2.5rem;
-    /* Başlık boyutu artırıldı */
     color: #2c3e50;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-    /* Daha belirgin gölge */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    transition: color 0.3s ease;
+}
+
+.upload-title:hover {
+    color: #1d3557;
 }
 
 .upload-form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    /* Alanlar arası boşluk artırıldı */
+    position: relative;
     text-align: left;
 }
 
 .form-group label {
     font-size: 1.1rem;
-    /* Etiket boyutu artırıldı */
     color: #495057;
     font-weight: bold;
-    /* Kalın yazı tipi eklendi */
+    transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+    color: #2a9d8f;
 }
 
 .form-group input[type="text"],
 .form-group input[type="file"] {
     width: 100%;
     padding: 12px;
-    /* Daha büyük iç boşluk */
-    margin-top: 5px;
     font-size: 1rem;
     border: 1px solid #ced4da;
-    border-radius: 5px;
-    transition: border-color 0.3s;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input[type="text"]:hover,
+.form-group input[type="file"]:hover {
+    border-color: #80bdff;
+    transform: translateY(-2px);
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="file"]:focus {
-    border-color: #80bdff;
-    /* Fokus durumunda kenar rengi değişimi */
+    border-color: #2a9d8f;
+    box-shadow: 0 0 8px rgba(42, 157, 143, 0.4);
     outline: none;
+    transform: translateY(-4px);
 }
 
 .file-input {
@@ -68,28 +82,23 @@
     background-color: #4caf50;
     color: white;
     border: none;
-    padding: 12px 20px;
-    /* Daha geniş iç boşluk */
-    border-radius: 5px;
+    padding: 14px 24px;
     font-size: 1.2rem;
-    /* Buton boyutu artırıldı */
+    font-weight: bold;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    /* Transform eklendi */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Buton gölge */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
 }
 
 .upload-button:hover {
     background-color: #45a049;
-    /* Hover durumu için renk değişimi */
-    transform: translateY(-2px);
-    /* Hover durumunda yukarı hareket */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(76, 175, 80, 0.5);
 }
 
 .upload-button:active {
     background-color: #388e3c;
-    /* Aktif durum için daha koyu yeşil */
     transform: translateY(1px);
-    /* Basıldığında hafif aşağı hareket */
+    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.3);
 }

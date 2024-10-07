@@ -6,6 +6,7 @@ const PlaylistManager = () => {
   const [playlists, setPlaylists] = useState([]);
   const [musicList, setMusicList] = useState([]);
   const [selectedPlaylist, setSelectedPlaylist] = useState(null);
+  const [newPlaylistName, setNewPlaylistName] = useState(''); // Yeni çalma listesi ismi
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/playlist/')
@@ -17,9 +18,17 @@ const PlaylistManager = () => {
       .catch(error => console.error(error));
   }, []);
 
-  const handleCreatePlaylist = (name) => {
-    axios.post('http://localhost:8000/api/playlist/', { name })
-      .then(response => setPlaylists([...playlists, response.data]))
+  const handleCreatePlaylist = () => {
+    if (!newPlaylistName) {
+      alert('Lütfen bir çalma listesi adı girin.');
+      return;
+    }
+
+    axios.post('http://localhost:8000/api/playlist/', { name: newPlaylistName })
+      .then(response => {
+        setPlaylists([...playlists, response.data]);
+        setNewPlaylistName(''); // Giriş alanını temizle
+      })
       .catch(error => console.error(error));
   };
 
@@ -37,12 +46,22 @@ const PlaylistManager = () => {
   return (
     <div className="playlist-manager-container">
       <h2 className="manager-title">🎶 Çalma Listesi Yöneticisi 🎶</h2>
-      <button 
-        className="create-playlist-button" 
-        onClick={() => handleCreatePlaylist('Yeni Çalma Listesi')}
-      >
-        + Yeni Çalma Listesi Oluştur
-      </button>
+      
+      <div className="create-playlist-section">
+        <input 
+          type="text" 
+          placeholder="Yeni Çalma Listesi Adı" 
+          value={newPlaylistName} 
+          onChange={(e) => setNewPlaylistName(e.target.value)} 
+          className="playlist-name-input"
+        />
+        <button 
+          className="create-playlist-button" 
+          onClick={handleCreatePlaylist}
+        >
+          + Çalma Listesi Oluştur
+        </button>
+      </div>
 
       <div className="playlists-section">
         <h3>Çalma Listeleri</h3>

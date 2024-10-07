@@ -3,62 +3,118 @@
 .player-container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f4f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: linear-gradient(135deg, #f9fafb, #e0e7ff);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .welcome-message {
-    font-size: 18px;
-    color: #333;
+    font-size: 1.2rem;
+    color: #374151;
     margin-bottom: 20px;
-}
+    font-weight: 500;
+    background-color: #e0f2fe;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    line-height: 1.5;
+  }
+  
+  .welcome-message .user-name {
+    font-weight: bold;
+    color: #1e40af;
+    font-size: 1.3rem;
+  }
+  
+  .welcome-message .store-info {
+    color: #0f766e;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+  }
+  
 
 .track-info {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+    background-color: #edf2f7;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .controls button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
 .controls button:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+}
+
+.controls button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
 }
 
 .controls button:disabled {
-    background-color: #cccccc;
+    background-color: #cbd5e1;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 .controls button:first-child {
-    background-color: #6c757d;
+    background: linear-gradient(135deg, #6c757d, #4b5563);
 }
 
 .controls button:first-child:hover {
-    background-color: #5a6268;
+    background: linear-gradient(135deg, #5a6268, #374151);
 }
 
-.current-track {
-    margin-top: 15px;
+.toggle-shuffle {
+    background-color: #10b981;
+    color: white;
+}
+
+.toggle-shuffle:hover {
+    background-color: #0a9c6b;
+}
+
+
+.next-track {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #6b7280;
     font-style: italic;
-    color: #555;
+}
+
+
+
+.player-container h2 {
+    color: #1e40af;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }

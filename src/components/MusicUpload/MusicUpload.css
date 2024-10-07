@@ -1,0 +1,95 @@
+/* MusicUpload.css */
+
+.upload-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    /* İç boşluk artırıldı */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    /* Köşeleri yuvarlat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Daha belirgin gölge */
+    text-align: center;
+}
+
+.upload-title {
+    font-size: 2.5rem;
+    /* Başlık boyutu artırıldı */
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    /* Daha belirgin gölge */
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Alanlar arası boşluk artırıldı */
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    /* Etiket boyutu artırıldı */
+    color: #495057;
+    font-weight: bold;
+    /* Kalın yazı tipi eklendi */
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    /* Daha büyük iç boşluk */
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="file"]:focus {
+    border-color: #80bdff;
+    /* Fokus durumunda kenar rengi değişimi */
+    outline: none;
+}
+
+.file-input {
+    padding: 8px;
+}
+
+.upload-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    /* Daha geniş iç boşluk */
+    border-radius: 5px;
+    font-size: 1.2rem;
+    /* Buton boyutu artırıldı */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    /* Transform eklendi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Buton gölge */
+}
+
+.upload-button:hover {
+    background-color: #45a049;
+    /* Hover durumu için renk değişimi */
+    transform: translateY(-2px);
+    /* Hover durumunda yukarı hareket */
+}
+
+.upload-button:active {
+    background-color: #388e3c;
+    /* Aktif durum için daha koyu yeşil */
+    transform: translateY(1px);
+    /* Basıldığında hafif aşağı hareket */
+}

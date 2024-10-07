@@ -1,0 +1,112 @@
+/* PlaylistManager.css */
+
+.playlist-manager-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.manager-title {
+    font-size: 2.2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.create-playlist-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 25px;
+}
+
+.create-playlist-button:hover {
+    background-color: #2980b9;
+}
+
+.playlists-section h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.playlists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.playlist-card {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.playlist-card:hover {
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.15), -6px -6px 18px rgba(255, 255, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+.select-button {
+    background-color: #27ae60;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select-button:hover {
+    background-color: #219150;
+}
+
+.music-add-section {
+    margin-top: 30px;
+}
+
+.music-add-section h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.music-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.music-card {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -2px -2px 8px rgba(255, 255, 255, 0.5);
+    text-align: left;
+}
+
+.add-music-button {
+    background-color: #e67e22;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.add-music-button:hover {
+    background-color: #d35400;
+}

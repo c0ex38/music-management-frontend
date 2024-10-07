@@ -1,0 +1,64 @@
+/* PlaylistPlayer.css */
+
+.player-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.welcome-message {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.track-info {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+.controls button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.controls button:first-child {
+    background-color: #6c757d;
+}
+
+.controls button:first-child:hover {
+    background-color: #5a6268;
+}
+
+.current-track {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}

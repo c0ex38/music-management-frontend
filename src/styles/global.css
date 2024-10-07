@@ -1,0 +1,166 @@
+/* global.css */
+
+/* Genel Ayarlar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Başlıklar */
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+/* Konteynerler için Genel Stil */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Kartlar */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 25px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Stili */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: #ecf0f1;
+}
+
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="file"]:focus,
+select:focus {
+    border-color: #3498db;
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Genel Buton Stili */
+button {
+    background: linear-gradient(135deg, #3498db, #5dade2);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5dade2, #3498db);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Özel Buton Stilleri */
+.create-button {
+    background: linear-gradient(135deg, #28a745, #5cb85c);
+}
+
+.create-button:hover {
+    background: linear-gradient(135deg, #5cb85c, #28a745);
+}
+
+/* Liste Stili */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 15px 0;
+}
+
+/* Input ve Seçim Alanı için Genel Stil */
+input[type="file"] {
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    border: 2px solid #bdc3c7;
+}
+
+/* Sayfa Başlıkları */
+.page-title {
+    font-size: 3rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,103 @@
+/* MusicList.css */
+
+.music-list-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f7f9fc;
+    /* Arka plan rengi eklendi */
+    border-radius: 15px;
+    /* Köşeleri yuvarlat */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Daha belirgin gölge */
+}
+
+.music-list-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    /* Daha hafif gölge */
+}
+
+.music-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Kartlar için minimum genişlik artırıldı */
+    gap: 20px;
+}
+
+.music-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    /* Köşeleri daha yuvarlak hale getirildi */
+    padding: 20px;
+    text-align: left;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15), -4px -4px 20px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.music-card.playing {
+    border: 3px solid #4caf50;
+    /* Çalan müzik kartı için kalın kenarlık */
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+    /* Çalan müzik kartına vurgulayıcı gölge */
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15), -6px -6px 20px rgba(255, 255, 255, 0.8);
+}
+
+.music-info h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #34495e;
+}
+
+.music-info p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.play-button {
+    background-color: #4caf50;
+    /* Oynat butonu rengi */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    /* Daha büyük iç boşluk */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Buton için gölge */
+}
+
+.play-button:hover {
+    background-color: #45a049;
+    /* Hover durumunda daha koyu yeşil */
+    transform: scale(1.05);
+    /* Hover sırasında büyütme efekti */
+}
+
+.play-button:active {
+    background-color: #388e3c;
+    /* Aktif durumda koyu yeşil */
+}
+
+.playing .play-button {
+    background-color: #3498db;
+    /* Oynayan müzik için farklı buton rengi */
+    color: white;
+}
+
+.playing .play-button:hover {
+    background-color: #2980b9;
+    /* Oynayan müzik butonu hover rengi */
+}
